@@ -10,4 +10,4 @@ EXPOSE 11211
 
 # 默认执行
 ENTRYPOINT ["/usr/bin/memcached"]
-CMD ["-u memcached", "-m 256m", "-p 11211", "-c 2500"]
+CMD ["-umemcached", "-m256m", "-p11211", "-c2500"]
