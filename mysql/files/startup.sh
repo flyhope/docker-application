@@ -20,4 +20,4 @@ if [ ! -z "$MYSQL_AUTO_INCREMENT_OFFSET" ]; then
 fi
 
 # 启动服务
-/usr/bin/mysqld_safe
+exec /usr/bin/mysqld_safe
