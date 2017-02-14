@@ -1,0 +1,36 @@
+FROM registry.cn-hangzhou.aliyuncs.com/huati/centos7-gcc
+MAINTAINER Leelmes "chengxuan@staff.weibo.com"
+
+RUN \
+mkdir -p /data1/download && \
+cd /data1/download && \
+curl -L -o ./pika2.1.2_centos6_bin.tar.gz https://github.com/Qihoo360/pika/releases/download/v2.1.2/pika2.1.2_centos6_bin.tar.gz && \
+tar zxvf pika*.tar.gz && \
+cp -R ./output /usr/local/pika 
+
+
+RUN yum -y install snappy-devel protobuf-compiler protobuf-devel bzip2-devel zlib-devel bzip2 git && \
+# 准备工作
+mkdir -p /data1/download && \
+cd /data1/download && \
+git clone https://github.com/Qihoo360/pika.git && \
+cd /data1/download/pika && \
+git checkout -b v2.1.4 && \
+git submodule init && \
+git submodule update && \
+
+# 编译安装
+make __REL=1 && \
+cp -f ./output/lib/libglog.so.0 /usr/lib64/ && \
+rm -f /lib64/libstdc++.so && \
+rm -f /lib64/libstdc++.so.6 && \
+ln -s /usr/local/lib64/libstdc++.so /lib64/libstdc++.so && \
+ln -s /usr/local/lib64/libstdc++.so.6 /lib64/libstdc++.so.6 && \
+cp -R ./output /usr/local/pika && \
+sed -i 's/thread-num\s*:.*/thread-num : 5/g' /usr/local/pika/conf/pika.conf && \
+
+# 清理现场
+cd /data1 && \
+rm -Rf /data1/download
+
+CMD ["/usr/local/pika/bin/pika", "-c", "/usr/local/pika/conf/pika.conf"]
