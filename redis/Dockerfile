@@ -11,4 +11,4 @@ COPY ./files/redis.conf /etc/
 EXPOSE 6379
 
 # 默认执行
-CMD ["/usr/bin/redis-server"]
+CMD ["/usr/bin/redis-server", "/etc/redis.conf"]
