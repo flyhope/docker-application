@@ -13,7 +13,8 @@ RUN mkdir -p /data1/download && \
     npm install -g cnpm --registry=https://registry.npm.taobao.org && \
     mkdir -p /data1/shell && \
     cd /data1 && \
-    rm -Rf download
+    rm -Rf download && \
+    yum install -y bzip2 && yum clean all
 
 # 工作目录
 WORKDIR /data1
