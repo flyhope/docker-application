@@ -3,7 +3,7 @@ MAINTAINER Leelmes "chengxuan@staff.weibo.com"
 
 
 # 复制脚本
-COPY ./files/startup.sh /data1/
+COPY ./files/startup-57.sh /data1/startup.sh
 
 # 安装MySQL-SERVER
 RUN rpm -Uvh http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm && \
