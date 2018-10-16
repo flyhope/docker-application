@@ -1,5 +1,5 @@
 FROM registry.aliyuncs.com/huati/centos:7
-MAINTAINER Leelmes "chengxuan@staff.weibo.com"
+MAINTAINER Leelmes "i@chengxuan.li"
 
 # 安装MySQL-SERVER
 RUN yum install -y redis && yum clean all

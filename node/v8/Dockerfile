@@ -1,5 +1,5 @@
 FROM registry.cn-hangzhou.aliyuncs.com/huati/centos:7
-MAINTAINER Leelmes "chengxuan@staff.weibo.com"
+MAINTAINER Leelmes "i@chengxuan.li"
 
 # 安装软件
 RUN mkdir -p /data1/download && \
