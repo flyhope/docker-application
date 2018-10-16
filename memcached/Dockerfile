@@ -1,4 +1,4 @@
-FROM registry.aliyuncs.com/huati/centos:7
+FROM registry.cn-beijing.aliyuncs.com/flyhope/centos:7
 MAINTAINER Leelmes "i@chengxuan.li"
 
 # 安装MySQL-SERVER

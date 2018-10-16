@@ -1,4 +1,4 @@
-FROM registry.cn-hangzhou.aliyuncs.com/huati/centos7-gcc
+FROM registry.cn-beijing.aliyuncs.com/flyhope/centos7-gcc
 MAINTAINER Leelmes "i@chengxuan.li"
 
 RUN yum -y install snappy-devel protobuf-compiler protobuf-devel bzip2-devel zlib-devel bzip2 git && \
