@@ -8,7 +8,7 @@ mkdir -p /data1/download && \
 cd /data1/download && \
 git clone https://github.com/Qihoo360/pika.git && \
 cd /data1/download/pika && \
-git checkout -b v2.1.4 && \
+git checkout -b v2.3.6 && \
 git submodule init && \
 git submodule update && \
 
